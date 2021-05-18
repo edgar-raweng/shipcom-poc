@@ -1,16 +1,25 @@
 import React from 'react'
 
 // Import core libraries
-import { Text, View } from 'react-native'
+import { AppRegistry } from 'react-native'
+import { Provider as PaperProvider } from 'react-native-paper'
+import { name as appName } from './app.json'
+
+// Import Screen
+import {
+  HomeScreen
+} from 'src/screen'
 
 const App = () => {
 
   return (
-    <View>
-      <Text>Hello, world!</Text>
-    </View>
+    <PaperProvider>
+      <HomeScreen/>
+    </PaperProvider>
   )
 
 }
 
 export default App
+
+AppRegistry.registerComponent( appName, () => App )
