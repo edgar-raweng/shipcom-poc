@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Import Libraries
-import { View, Text } from 'react-native'
+import { View, Image } from 'react-native'
 
 // Import Components
 import {
@@ -24,9 +24,10 @@ const ConsentScreen = ( props ) => {
   return (
 
     <View style={styles.container}>
-      <Text>
-        Edgar's Page
-      </Text>
+      <Image
+        style={styles.logo}
+        source={require('src/assets/shipcom-logo.png')}
+      />
       <DynamicText content={content}/>
     </View>
 

@@ -25,10 +25,11 @@ const DynamicText = ( props ) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: StatusBar.currentHeight
+    paddingTop: StatusBar.currentHeight,
+    height: Dimensions.get('window').height * 0.60
   },
   scrollView: {
-    height: Dimensions.get('window').height * 0.66
+    flex: 1
   },
   text: {
     padding: 15

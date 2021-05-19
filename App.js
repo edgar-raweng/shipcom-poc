@@ -17,7 +17,7 @@ import {
 
 // Import Screen
 import {
-  HomeScreen,
+  PanelScreen,
   ConsentScreen
 } from 'src/screen'
 
@@ -46,7 +46,7 @@ const App = () => {
         >
           <Stack.Screen
             name={ `Home` }
-            component={ HomeScreen }
+            component={ PanelScreen }
             options={{ isConnected: netInfo }}
           />
 
