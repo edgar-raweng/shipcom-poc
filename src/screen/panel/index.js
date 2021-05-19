@@ -8,7 +8,7 @@ import {
   Header
 } from 'src/components'
 
-const HomeScreen = () => (
+const PanelScreen = () => (
 
   <View>
     <Header
@@ -18,4 +18,4 @@ const HomeScreen = () => (
 
 )
 
-export default HomeScreen
+export default PanelScreen
