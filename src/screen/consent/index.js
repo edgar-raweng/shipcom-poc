@@ -1,12 +1,13 @@
 import React from 'react'
 
 // Import Libraries
-import { View, Image } from 'react-native'
+import { View } from 'react-native'
 
 // Import Components
 import {
-  Header,
-  DynamicText
+  ShipcomLogo,
+  DynamicText,
+  LinkButton
 } from 'src/components'
 
 // Import Styles
@@ -24,11 +25,14 @@ const ConsentScreen = ( props ) => {
   return (
 
     <View style={styles.container}>
-      <Image
-        style={styles.logo}
-        source={require('src/assets/shipcom-logo.png')}
-      />
-      <DynamicText content={content}/>
+      <ShipcomLogo />
+      <View style={styles.body}>
+        <DynamicText content={content}/>
+      </View>
+      <View style={styles.footer}>
+        <LinkButton link='/Panel' text='Accept' />
+        <LinkButton link='/Login' text='Cancel' />
+      </View>
     </View>
 
   )
