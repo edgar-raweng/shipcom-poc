@@ -4,9 +4,7 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text,
-  StatusBar,
-  Dimensions
+  Text
 } from 'react-native'
 
 const DynamicText = ( props ) => {
@@ -25,8 +23,7 @@ const DynamicText = ( props ) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: StatusBar.currentHeight,
-    height: Dimensions.get('window').height * 0.60
+    height: '100%'
   },
   scrollView: {
     flex: 1

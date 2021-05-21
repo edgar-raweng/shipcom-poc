@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Import Libraries
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
 // Import Components
 import {
@@ -12,10 +12,11 @@ const PanelScreen = () => (
 
   <View>
     <Header
-      title={ `Service Requests` }
+      title={ `Panel Screen` }
     />
   </View>
 
 )
+
 
 export default PanelScreen

@@ -18,7 +18,8 @@ import {
 // Import Screen
 import {
   PanelScreen,
-  ConsentScreen
+  ConsentScreen,
+  LoginScreen
 } from 'src/screen'
 
 const Stack = createStackNavigator()
@@ -45,7 +46,7 @@ const App = () => {
           headerMode={ `none` }
         >
           <Stack.Screen
-            name={ `Home` }
+            name={ `Panel` }
             component={ PanelScreen }
             options={{ isConnected: netInfo }}
           />
@@ -53,6 +54,12 @@ const App = () => {
           <Stack.Screen
             name={ `Consent` }
             component={ ConsentScreen }
+            initialParams={{ isConnected: netInfo }}
+          />
+
+          <Stack.Screen
+            name={ `Login` }
+            component={ LoginScreen }
             initialParams={{ isConnected: netInfo }}
           />
         </Stack.Navigator>
