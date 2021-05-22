@@ -10,6 +10,10 @@ import { AppRegistry } from 'react-native'
 import { Provider as PaperProvider } from 'react-native-paper'
 import { name as appName } from './app.json'
 
+// State
+import { Provider as ReduxProvider } from 'react-redux'
+import store from 'src/redux/store'
+
 // Import Components
 import {
   ConnectionAlert
@@ -17,7 +21,7 @@ import {
 
 // Import Screen
 import {
-  PanelScreen,
+  ServicesScreen,
   ConsentScreen,
   LoginScreen
 } from 'src/screen'
@@ -39,38 +43,40 @@ const App = () => {
   }, [] )
 
   return (
-    <PaperProvider>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName={ `Consent` }
-          headerMode={ `none` }
-        >
-          <Stack.Screen
-            name={ `Panel` }
-            component={ PanelScreen }
-            options={{ isConnected: netInfo }}
-          />
+    <ReduxProvider store={ store }>
+      <PaperProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName={ `Consent` }
+            headerMode={ `none` }
+          >
+            <Stack.Screen
+              name={ `Services` }
+              component={ ServicesScreen }
+              options={{ isConnected: netInfo }}
+            />
 
-          <Stack.Screen
-            name={ `Consent` }
-            component={ ConsentScreen }
-            initialParams={{ isConnected: netInfo }}
-          />
+            <Stack.Screen
+              name={ `Consent` }
+              component={ ConsentScreen }
+              initialParams={{ isConnected: netInfo }}
+            />
 
-          <Stack.Screen
-            name={ `Login` }
-            component={ LoginScreen }
-            initialParams={{ isConnected: netInfo }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+            <Stack.Screen
+              name={ `Login` }
+              component={ LoginScreen }
+              initialParams={{ isConnected: netInfo }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
 
-      {/* Check if we have connection */}
-      {
-        !netInfo && 
-        <ConnectionAlert isConnected={ netInfo } />
-      }
-    </PaperProvider>
+        {/* Check if we have connection */}
+        {
+          !netInfo && 
+          <ConnectionAlert isConnected={ netInfo } />
+        }
+      </PaperProvider>
+    </ReduxProvider>
   )
 
 }

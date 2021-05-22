@@ -20,8 +20,6 @@ const content = "I'm baby quinoa cred 8-bit asymmetrical street art readymade fa
 
 const ConsentScreen = ( props ) => {
 
-  console.log('THIS IS THE CONNECTION ====>', props.route)
-
   return (
 
     <View style={styles.container}>
@@ -30,7 +28,7 @@ const ConsentScreen = ( props ) => {
         <DynamicText content={content}/>
       </View>
       <View style={styles.footer}>
-        <LinkButton link='/Panel' text='Accept' />
+        <LinkButton link='/Services' text='Accept' />
         <LinkButton link='/Login' text='Cancel' />
       </View>
     </View>
