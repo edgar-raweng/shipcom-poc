@@ -2,15 +2,20 @@ import React from 'react'
 
 import { StyleSheet } from 'react-native'
 import { Link } from '@react-navigation/native'
+import { Button } from 'react-native-paper'
 
-const LinkButton = ( props ) => {
-  const { link, text } = props
-  
+const LinkButton = ( { link, text } ) => {
+
   return (
-    <Link style={styles.button} to={link}>
-      {text}
+    <Link to={link}>
+      <Button
+        mode={ `contained` }
+      >
+        {text}
+      </Button>
     </Link>
   )
+  
 }
 
 const styles = StyleSheet.create({

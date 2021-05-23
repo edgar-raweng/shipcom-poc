@@ -6,7 +6,6 @@ import {
 } from 'react-native'
 import { connect, useDispatch } from 'react-redux'
 import {
-  Button,
   Portal,
   Dialog,
   Paragraph
@@ -15,7 +14,9 @@ import {
 // Import Components
 import {
   Header,
-  DataTable
+  DataTable,
+  Button,
+  TwoButtons
 } from 'src/components'
 
 // Import Styles
@@ -38,29 +39,17 @@ const ServicesScreen =  ({ dataRecords }) => {
   }
 
   return (
-    <View>
+    <View style={ styles.viewContainer }>
       <Header
         title={ `Services Request` }
       />
       <DataTable dataSource={ dataRecords }/>
 
       {/* Buttons */}
-      <View style={ styles.buttonsWrapper }>
-        <View style={ styles.buttonDownloadContainer }>
-          <Button mode={ `contained` }>
-            Download
-          </Button>
-        </View>
-
-        <View style={ styles.buttonClearContainer }>
-          <Button
-            mode={ `contained` }
-            onPress={ showDialog }
-          >
-            Clear
-          </Button>
-        </View>
-      </View>
+      <TwoButtons
+        firstButton={ <Button>Download</Button> }
+        secondButton={ <Button onPress={ showDialog }>Clear</Button> }
+      />
 
       {/* Dialog */}
       <Portal>
@@ -81,12 +70,14 @@ const ServicesScreen =  ({ dataRecords }) => {
           <Dialog.Actions>
             <Button
               onPress={ hideDialog }
+              isText
             >
               Yes!, I'm sure
             </Button>
 
             <Button
               onPress={ handleClearData }
+              isText
             >
               Cancel
             </Button>

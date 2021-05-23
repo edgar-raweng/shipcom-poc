@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-  viewContainer: {
+  linkButtonWrapper: {
     flex: 1
   }
 })

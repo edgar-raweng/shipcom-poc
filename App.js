@@ -7,7 +7,7 @@ import NetInfo from '@react-native-community/netinfo'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { AppRegistry } from 'react-native'
-import { Provider as PaperProvider } from 'react-native-paper'
+import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper'
 import { name as appName } from './app.json'
 
 // State
@@ -28,6 +28,11 @@ import {
 
 const Stack = createStackNavigator()
 
+const customTheme = {
+  ...DefaultTheme,
+  dark: true
+}
+
 const App = () => {
 
   const [ netInfo, setNetInfo ] = useState( false )
@@ -44,7 +49,7 @@ const App = () => {
 
   return (
     <ReduxProvider store={ store }>
-      <PaperProvider>
+      <PaperProvider theme={ customTheme }>
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName={ `Consent` }

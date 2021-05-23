@@ -3,14 +3,14 @@ import { Platform, StyleSheet } from 'react-native'
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    //alignItems: 'center',
     marginTop: Platform.OS === 'ios' ? 40 : 10
   },
   body: {
     flex: 9,
     marginBottom: 80
   },
-  footer: {
+  /*footer: {
     flex: 1,
     height: 80,
     width: '100%',
@@ -19,5 +19,5 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     backgroundColor: 'white'
-  }
+  }*/
 })
