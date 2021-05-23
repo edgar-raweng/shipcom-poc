@@ -12,7 +12,7 @@ import { name as appName } from './app.json'
 
 // State
 import { Provider as ReduxProvider } from 'react-redux'
-import store from 'src/redux/store'
+import store from 'src/store/store'
 
 // Import Components
 import {

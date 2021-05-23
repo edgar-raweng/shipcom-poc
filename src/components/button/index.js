@@ -1,9 +1,6 @@
 // Import React
 import React, { Fragment } from 'react'
 
-// Import Styles
-import styles from './styles'
-
 // Import Libraries
 import { Button as PapperButton} from 'react-native-paper'
 

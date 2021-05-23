@@ -5,7 +5,8 @@ export default StyleSheet.create({
     position: `absolute`,
     left: 0,
     right: 0,
-    bottom: 0
+    bottom: 0,
+    paddingBottom: Platform.OS === `ios` ? 20 : 0
   },
   // Buttons
   buttonsWrapper: {

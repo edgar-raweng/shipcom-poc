@@ -50,14 +50,18 @@ const Table = ( { dataSource } ) => {
           (
             <SafeAreaView>
               <ScrollView horizontal>
-                <DataTable>
+                <DataTable style={ styles.container }>
 
                   {/* Table Header */}
                   <DataTable.Header style={styles.header}>
                     { dataTableHeaders.map( ( title, index ) => (
 
                         <DataTable.Title key={ elementKey( `table-header`, index ) } style={ styles.headerCell }>
-                          <Text style={ styles.headerText }>{ title }</Text>
+                          <Text style={ styles.headerText }>
+                            {
+                              title.split(`_`).join(` `)
+                            }
+                          </Text>
                         </DataTable.Title>
 
                       ) )

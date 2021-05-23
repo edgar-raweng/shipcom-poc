@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { 
   View
 } from 'react-native'
-import { connect, useDispatch } from 'react-redux'
+import { connect } from 'react-redux'
 import {
   Portal,
   Dialog,
@@ -22,17 +22,20 @@ import {
 // Import Styles
 import styles from './styles'
 
-const ServicesScreen =  ({ dataRecords }) => {
+import { DOWNLOAD_DATA, CLEAR_DATA } from 'src/store/actionTypes'
+
+const ServicesScreen =  ({ records, downloadData, clearData }) => {
 
   // Set state
   const [ visible, setVisible ] = useState( false )
   const showDialog = () => setVisible( true )
   const hideDialog = () => setVisible( false )
-  const dispatch = useDispatch()
+
+  //const dispatch = useDispatch()
 
   const handleClearData = () => {
 
-    dispatch({ type: `DELETE_DATA` })
+    clearData()
 
     hideDialog()
 
@@ -43,7 +46,7 @@ const ServicesScreen =  ({ dataRecords }) => {
       <Header
         title={ `Services Request` }
       />
-      <DataTable dataSource={ dataRecords }/>
+      <DataTable dataSource={ records }/>
 
       {/* Buttons */}
       <TwoButtons
@@ -69,14 +72,14 @@ const ServicesScreen =  ({ dataRecords }) => {
 
           <Dialog.Actions>
             <Button
-              onPress={ hideDialog }
+              onPress={ handleClearData }
               isText
             >
               Yes!, I'm sure
             </Button>
 
             <Button
-              onPress={ handleClearData }
+              onPress={ hideDialog }
               isText
             >
               Cancel
@@ -89,12 +92,16 @@ const ServicesScreen =  ({ dataRecords }) => {
 
 }
 
-const mapStateToProps = ( state ) => {
+const mapStateToProps = ( state ) => state
+const mapDispatchToProps = dispatch => ({
+  downloadData: () => dispatch({
+    type: DOWNLOAD_DATA
+  }),
+  clearData: () => dispatch({
+    type: CLEAR_DATA
+  })
+})
+const connectComponent = connect( mapStateToProps, mapDispatchToProps )
 
-  const { records } = state
-
-  return { dataRecords: records }
-
-}
-
-export default connect( mapStateToProps )( ServicesScreen )
+//export default connect( mapStateToProps )( ServicesScreen )
+export default connectComponent( ServicesScreen )

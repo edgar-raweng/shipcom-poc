@@ -1,7 +1,4 @@
-import {
-  GET_DATA,
-  DELETE_DATA,
-} from 'src/redux/actionTypes'
+import { DOWNLOAD_DATA, CLEAR_DATA } from './actionTypes'
 
 const initialState = {
   records: [
@@ -66,27 +63,25 @@ const initialState = {
         "INVENTORY_ORG_ID": "204"
     }
   ],
-  action: GET_DATA,
+  action: DOWNLOAD_DATA,
   stateCode: 200,
   message: ``
 }
 
-export default ( state = initialState, action ) => {
+const reducer = ( state = initialState, action ) => {
 
-  switch( action ) {
+  switch ( action.type ) {
 
-    case GET_DATA:
-      return state
-
-    case DELETE_DATA:
-      return {
-        ...state,
-        records: []
-      }
-
+    case DOWNLOAD_DATA:
+      return { ...state }
+    case CLEAR_DATA:
+      console.log('ARE WE HERE? =====>')
+      return { ...state, records: [] }
     default:
       return state
 
   }
 
 }
+
+export default reducer
