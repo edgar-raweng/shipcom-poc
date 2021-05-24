@@ -16,6 +16,9 @@ import {
   styles
 } from './styles'
 
+// Import Utils
+import { dataBase } from 'src/utils'
+
 // Data
 import { consentText } from 'src/assets/data'
 
