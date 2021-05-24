@@ -9,10 +9,11 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { AppRegistry } from 'react-native'
 import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper'
 import { name as appName } from './app.json'
+import RNBootSplash from "react-native-bootsplash";
 
 // State
 import { Provider as ReduxProvider } from 'react-redux'
-import store from 'src/store/store'
+import store from 'src/state/store'
 
 // Import Components
 import {
@@ -39,11 +40,19 @@ const App = () => {
 
   useEffect( () => {
 
-    NetInfo.addEventListener(( state ) => {
+    const init = async () => {
 
-      setNetInfo( state.isConnected )
+      NetInfo.addEventListener(( state ) => {
 
-    })
+        setNetInfo( state.isConnected )
+  
+      })
+
+    }
+
+    init().finally( async () => {
+      await RNBootSplash.hide({ fade: true });
+    } )
 
   }, [] )
 

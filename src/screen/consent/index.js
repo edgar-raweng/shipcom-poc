@@ -25,9 +25,9 @@ const ConsentScreen = ({ navigation }) => {
 
     <View style={styles.container}>
       <ShipcomLogo />
-      {/*<View style={styles.body}>
+      <View style={styles.body}>
         <DynamicText content={ consentText }/>
-  </View>*/}
+      </View>
 
       <TwoButtons
         firstButton={ <Button navigation={ navigation } to={ `Services` }>Accept</Button> }

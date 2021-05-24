@@ -11,6 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		73FE1E9D265B0BA3006FCE16 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73FE1E9C265B0BA3006FCE16 /* BootSplash.storyboard */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		D8BC2D45C46181DCE7964147 /* libPods-shipcom-shipcomTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE38BF2EF654FDF4AA1F923 /* libPods-shipcom-shipcomTests.a */; };
 		F210C20C9A57B746EAAD02AF /* libPods-shipcom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7365C687DAE9F31D769E832A /* libPods-shipcom.a */; };
@@ -39,6 +40,7 @@
 		2EEF3672DCC46A97723C7B55 /* Pods-shipcom-shipcomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shipcom-shipcomTests.release.xcconfig"; path = "Target Support Files/Pods-shipcom-shipcomTests/Pods-shipcom-shipcomTests.release.xcconfig"; sourceTree = "<group>"; };
 		658C6287BC0EC53DD5FCDFCE /* Pods-shipcom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shipcom.release.xcconfig"; path = "Target Support Files/Pods-shipcom/Pods-shipcom.release.xcconfig"; sourceTree = "<group>"; };
 		7365C687DAE9F31D769E832A /* libPods-shipcom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-shipcom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73FE1E9C265B0BA3006FCE16 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = shipcom/BootSplash.storyboard; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = shipcom/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBE38BF2EF654FDF4AA1F923 /* libPods-shipcom-shipcomTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-shipcom-shipcomTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC92879019591AA0B48267A1 /* Pods-shipcom-shipcomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shipcom-shipcomTests.debug.xcconfig"; path = "Target Support Files/Pods-shipcom-shipcomTests/Pods-shipcom-shipcomTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				73FE1E9C265B0BA3006FCE16 /* BootSplash.storyboard */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -114,7 +117,6 @@
 				EC92879019591AA0B48267A1 /* Pods-shipcom-shipcomTests.debug.xcconfig */,
 				2EEF3672DCC46A97723C7B55 /* Pods-shipcom-shipcomTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,7 +157,6 @@
 			children = (
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73FE1E9D265B0BA3006FCE16 /* BootSplash.storyboard in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);

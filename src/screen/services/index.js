@@ -16,22 +16,26 @@ import {
   Header,
   DataTable,
   Button,
-  TwoButtons
+  TwoButtons,
+  ActivityModal
 } from 'src/components'
 
 // Import Styles
 import styles from './styles'
 
-import { DOWNLOAD_DATA, CLEAR_DATA } from 'src/store/actionTypes'
+// Import State
+import {
+  DOWNLOAD_DATA,
+  CLEAR_DATA
+} from 'src/state/actionTypes'
 
 const ServicesScreen =  ({ records, downloadData, clearData }) => {
 
   // Set state
   const [ visible, setVisible ] = useState( false )
+  const [ showActivityModal, setShowModal ] = useState( false )
   const showDialog = () => setVisible( true )
   const hideDialog = () => setVisible( false )
-
-  //const dispatch = useDispatch()
 
   const handleClearData = () => {
 
@@ -39,6 +43,11 @@ const ServicesScreen =  ({ records, downloadData, clearData }) => {
 
     hideDialog()
 
+  }
+
+  const handlerDownload = () => {
+    setShowModal( true )
+    downloadData()
   }
 
   return (
@@ -50,7 +59,7 @@ const ServicesScreen =  ({ records, downloadData, clearData }) => {
 
       {/* Buttons */}
       <TwoButtons
-        firstButton={ <Button>Download</Button> }
+        firstButton={ <Button onPress={ handlerDownload }>Download</Button> }
         secondButton={ <Button onPress={ showDialog }>Clear</Button> }
       />
 
@@ -87,6 +96,11 @@ const ServicesScreen =  ({ records, downloadData, clearData }) => {
           </Dialog.Actions>
         </Dialog>
       </Portal>
+
+      {/* Activity Modal */}
+      <ActivityModal
+        open={ showActivityModal }
+      />
     </View>
   )
 
@@ -103,5 +117,4 @@ const mapDispatchToProps = dispatch => ({
 })
 const connectComponent = connect( mapStateToProps, mapDispatchToProps )
 
-//export default connect( mapStateToProps )( ServicesScreen )
 export default connectComponent( ServicesScreen )

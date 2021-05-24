@@ -1,3 +1,4 @@
+export { default as ActivityModal } from './activityModal'
 export { default as ConnectionAlert } from './connectionAlert'
 export { default as Header } from './header'
 export { default as ShipcomLogo } from './shipcomLogo'
