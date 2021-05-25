@@ -23,10 +23,6 @@ export const reducer = ( state = initialState, action ) => {
 // Download data reducer
 export const downloadServices = () => async ( dispatch, getState ) => {
 
-  const axios = await fetchApi()
-
-  //console.log('THIS IS SPARTA ===>', axios)
-
   dispatch( { type: DOWNLOAD_DATA } )
 
 }
