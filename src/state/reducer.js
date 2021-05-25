@@ -1,5 +1,5 @@
 // Import store
-import { DOWNLOAD_DATA, CLEAR_DATA } from './actionTypes'
+import { DOWNLOAD_DATA, CLEAR_DATA, SET_NET_INFO } from './actionTypes'
 import initialState from './initialState'
 
 const reducer = ( state = initialState, action ) => {
@@ -10,6 +10,8 @@ const reducer = ( state = initialState, action ) => {
       return { ...initialState }
     case CLEAR_DATA:
       return { ...state, records: [] }
+    case SET_NET_INFO:
+      return { ...state, netInfo: action.netInfo }
     default:
       return state
 
