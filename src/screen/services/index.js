@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { 
   View
 } from 'react-native'
-import { connect } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import {
   Portal,
   Dialog,
@@ -28,6 +28,7 @@ import {
   DOWNLOAD_DATA,
   CLEAR_DATA
 } from 'src/state/actionTypes'
+import { downloadServices } from 'src/state/reducer'
 
 const ServicesScreen =  ({ records, downloadData, clearData }) => {
 
@@ -37,17 +38,18 @@ const ServicesScreen =  ({ records, downloadData, clearData }) => {
   const showDialog = () => setVisible( true )
   const hideDialog = () => setVisible( false )
 
+  const dispatch = useDispatch()
+
   const handleClearData = () => {
 
     clearData()
-
     hideDialog()
 
   }
 
   const handlerDownload = () => {
     setShowModal( true )
-    downloadData()
+    dispatch( downloadServices() )
   }
 
   return (
