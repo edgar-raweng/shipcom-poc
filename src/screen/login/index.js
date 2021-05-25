@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Import Libraries
-import { View, StyleSheet } from 'react-native'
+import { View } from 'react-native'
 
 // Import Components
 import {
@@ -9,23 +9,19 @@ import {
   ShipcomLogo,
 } from 'src/components'
 
+// Import Styles
+import styles from './styles'
+
 const LoginScreen = () => (
 
   <View style={styles.container}>
-    <ShipcomLogo />
+    <View style={styles.imageContainer}>
+      <ShipcomLogo isLarge={true}/>
+    </View>
     <LinkButton link="/Consent" text="Login" />
   </View>
 
 )
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
 
 
 export default LoginScreen

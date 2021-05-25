@@ -11,6 +11,10 @@ export default StyleSheet.create({
     width: 248,
     height: 52
   },
+  logoLarge: {
+    width: Dimensions.get('window').width * 0.90,
+    height: Dimensions.get('window').width * 0.2
+  },
   logo: {
     maxWidth: 325,
     maxHeight: 72,
