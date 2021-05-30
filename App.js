@@ -1,15 +1,11 @@
 import 'react-native-gesture-handler';
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 // Import core libraries
-import NetInfo from '@react-native-community/netinfo'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
 import { AppRegistry } from 'react-native'
 import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper'
 import { name as appName } from './app.json'
-import RNBootSplash from "react-native-bootsplash";
 
 // State
 import { Provider as ReduxProvider } from 'react-redux'
@@ -17,17 +13,8 @@ import store from 'src/state/store'
 
 // Import Components
 import {
-  ConnectionAlert
+  ScreensContainer
 } from 'src/components'
-
-// Import Screen
-import {
-  ServicesScreen,
-  ConsentScreen,
-  LoginScreen
-} from 'src/screen'
-
-const Stack = createStackNavigator()
 
 const customTheme = {
   ...DefaultTheme,
@@ -36,59 +23,10 @@ const customTheme = {
 
 const App = () => {
 
-  const [ netInfo, setNetInfo ] = useState( false )
-
-  useEffect( () => {
-
-    const init = async () => {
-
-      NetInfo.addEventListener(( state ) => {
-
-        setNetInfo( state.isConnected )
-  
-      })
-
-    }
-
-    init().finally( async () => {
-      await RNBootSplash.hide({ fade: true });
-    } )
-
-  }, [] )
-
   return (
     <ReduxProvider store={ store }>
       <PaperProvider theme={ customTheme }>
-        <NavigationContainer>
-          <Stack.Navigator
-            initialRouteName={ `Consent` }
-            headerMode={ `none` }
-          >
-            <Stack.Screen
-              name={ `Services` }
-              component={ ServicesScreen }
-              options={{ isConnected: netInfo }}
-            />
-
-            <Stack.Screen
-              name={ `Consent` }
-              component={ ConsentScreen }
-              initialParams={{ isConnected: netInfo }}
-            />
-
-            <Stack.Screen
-              name={ `Login` }
-              component={ LoginScreen }
-              initialParams={{ isConnected: netInfo }}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-
-        {/* Check if we have connection */}
-        {
-          !netInfo && 
-          <ConnectionAlert isConnected={ netInfo } />
-        }
+        <ScreensContainer />
       </PaperProvider>
     </ReduxProvider>
   )

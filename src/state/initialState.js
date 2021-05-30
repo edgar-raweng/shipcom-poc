@@ -65,5 +65,6 @@ export default {
   ],
   action: DOWNLOAD_DATA,
   stateCode: 200,
-  message: ``
+  message: ``,
+  netInfo: {}
 }
